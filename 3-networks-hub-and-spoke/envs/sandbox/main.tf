@@ -15,7 +15,7 @@
  */
 
 locals {
-  env              = "development"
+  env              = "sandbox"
   environment_code = substr(local.env, 0, 1)
 
   private_service_cidr = "10.16.40.0/21"

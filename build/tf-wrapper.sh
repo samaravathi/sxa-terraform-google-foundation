@@ -37,7 +37,7 @@ min_depth=1  # Must be configured based in your directory design
 # The regex to find folders that contains the Terraform configurations to apply.
 #
 # When using environments as leaf nodes (default) the regex contains the there
-# branches/environments development, nonproduction, and "production" and the
+# branches/environments sandbox, nonproduction, and "production" and the
 # additional special value "shared"
 #
 # When using environments as root nodes the regex  contains the name of the
@@ -46,7 +46,7 @@ min_depth=1  # Must be configured based in your directory design
 #==============================================================================#
 
 # Environments as leaf nodes in source code case
-leaf_regex_plan="^(development|nonproduction|production|shared)$"
+leaf_regex_plan="^(sandbox|nonproduction|production|shared)$"
 
 # Environments as root nodes in source code case
 # leaf_regex_plan="^(business_unit_1|business_unit_2)$"
@@ -70,11 +70,11 @@ do_plan() {
 # Example:
 #         git-repo
 #         └── business_unit_1
-#             ├── development
+#             ├── sandbox
 #             ├── nonproduction
 #             └── production
 #         └── business_unit_2
-#             ├── development
+#             ├── sandbox
 #             ├── nonproduction
 #             └── production
 #=========================================================#
@@ -95,7 +95,7 @@ do_action() {
 # Environments as root nodes in source code Case (alternative)
 # Example:
 #         git-repo
-#         └── development
+#         └── sandbox
 #             ├── business_unit_1
 #             └── business_unit_2
 #         └── nonproduction

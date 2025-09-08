@@ -24,7 +24,7 @@ locals {
   bootstrap_folder_name     = data.terraform_remote_state.bootstrap.outputs.common_config.bootstrap_folder_name
   common_folder_name        = data.terraform_remote_state.org.outputs.common_folder_name
   network_folder_name       = data.terraform_remote_state.org.outputs.network_folder_name
-  development_folder_name   = data.terraform_remote_state.env_development.outputs.env_folder
+  sandbox_folder_name       = data.terraform_remote_state.env_sandbox.outputs.env_folder
   nonproduction_folder_name = data.terraform_remote_state.env_nonproduction.outputs.env_folder
   production_folder_name    = data.terraform_remote_state.env_production.outputs.env_folder
 }
@@ -47,12 +47,12 @@ data "terraform_remote_state" "org" {
   }
 }
 
-data "terraform_remote_state" "env_development" {
+data "terraform_remote_state" "env_sandbox" {
   backend = "gcs"
 
   config = {
     bucket = var.remote_state_bucket
-    prefix = "terraform/environments/development"
+    prefix = "terraform/environments/sandbox"
   }
 }
 

@@ -23,7 +23,7 @@ function org(){
 
 function envs(){
     # restore backend configs in main module
-    mv 2-environments/envs/development/backend.tf.disabled  2-environments/envs/development/backend.tf
+    mv 2-environments/envs/sandbox/backend.tf.disabled  2-environments/envs/sandbox/backend.tf
     mv 2-environments/envs/nonproduction/backend.tf.disabled  2-environments/envs/nonproduction/backend.tf
     mv 2-environments/envs/production/backend.tf.disabled  2-environments/envs/production/backend.tf
 }
@@ -41,17 +41,17 @@ function networks(){
     fi
 
     # restore backend configs in main module
-    mv $network_dir/envs/development/backend.tf.disabled  $network_dir/envs/development/backend.tf
+    mv $network_dir/envs/sandbox/backend.tf.disabled  $network_dir/envs/sandbox/backend.tf
     mv $network_dir/envs/nonproduction/backend.tf.disabled  $network_dir/envs/nonproduction/backend.tf
     mv $network_dir/envs/production/backend.tf.disabled  $network_dir/envs/production/backend.tf
 
     # restore access_context.auto.tfvars in main module
-    mv $network_dir/envs/development/access_context.auto.tfvars.disabled  $network_dir/envs/development/access_context.auto.tfvars
+    mv $network_dir/envs/sandbox/access_context.auto.tfvars.disabled  $network_dir/envs/sandbox/access_context.auto.tfvars
     mv $network_dir/envs/nonproduction/access_context.auto.tfvars.disabled  $network_dir/envs/nonproduction/access_context.auto.tfvars
     mv $network_dir/envs/production/access_context.auto.tfvars.disabled  $network_dir/envs/production/access_context.auto.tfvars
 
     # restore common.auto.tfvars in main module
-    mv $network_dir/envs/development/common.auto.tfvars.disabled  $network_dir/envs/development/common.auto.tfvars
+    mv $network_dir/envs/sandbox/common.auto.tfvars.disabled  $network_dir/envs/sandbox/common.auto.tfvars
     mv $network_dir/envs/nonproduction/common.auto.tfvars.disabled  $network_dir/envs/nonproduction/common.auto.tfvars
     mv $network_dir/envs/production/common.auto.tfvars.disabled  $network_dir/envs/production/common.auto.tfvars
 }
@@ -79,29 +79,29 @@ function shared(){
 
 function projects(){
     # restore backend configs in main module
-    mv 4-projects/business_unit_1/development/backend.tf.disabled 4-projects/business_unit_1/development/backend.tf
+    mv 4-projects/business_unit_1/sandbox/backend.tf.disabled 4-projects/business_unit_1/sandbox/backend.tf
     mv 4-projects/business_unit_1/nonproduction/backend.tf.disabled 4-projects/business_unit_1/nonproduction/backend.tf
     mv 4-projects/business_unit_1/production/backend.tf.disabled 4-projects/business_unit_1/production/backend.tf
     mv 4-projects/business_unit_1/shared/backend.tf.disabled 4-projects/business_unit_1/shared/backend.tf
 
     # restore access_context.auto.tfvars in main module
-    mv 4-projects/business_unit_1/development/access_context.auto.tfvars.disabled 4-projects/business_unit_1/development/access_context.auto.tfvars
+    mv 4-projects/business_unit_1/sandbox/access_context.auto.tfvars.disabled 4-projects/business_unit_1/sandbox/access_context.auto.tfvars
     mv 4-projects/business_unit_1/nonproduction/access_context.auto.tfvars.disabled 4-projects/business_unit_1/nonproduction/access_context.auto.tfvars
     mv 4-projects/business_unit_1/production/access_context.auto.tfvars.disabled 4-projects/business_unit_1/production/access_context.auto.tfvars
 
     # restore business_unit_1.auto.tfvars in main module
-    mv 4-projects/business_unit_1/development/business_unit_1.auto.tfvars.disabled 4-projects/business_unit_1/development/business_unit_1.auto.tfvars
+    mv 4-projects/business_unit_1/sandbox/business_unit_1.auto.tfvars.disabled 4-projects/business_unit_1/sandbox/business_unit_1.auto.tfvars
     mv 4-projects/business_unit_1/nonproduction/business_unit_1.auto.tfvars.disabled 4-projects/business_unit_1/nonproduction/business_unit_1.auto.tfvars
     mv 4-projects/business_unit_1/production/business_unit_1.auto.tfvars.disabled 4-projects/business_unit_1/production/business_unit_1.auto.tfvars
 
     # restore ENVS.auto.tfvars in main module
-    mv 4-projects/business_unit_1/development/development.auto.tfvars.disabled 4-projects/business_unit_1/development/development.auto.tfvars
+    mv 4-projects/business_unit_1/sandbox/sandbox.auto.tfvars.disabled 4-projects/business_unit_1/sandbox/sandbox.auto.tfvars
     mv 4-projects/business_unit_1/nonproduction/nonproduction.auto.tfvars.disabled 4-projects/business_unit_1/nonproduction/nonproduction.auto.tfvars
     mv 4-projects/business_unit_1/production/production.auto.tfvars.disabled 4-projects/business_unit_1/production/production.auto.tfvars
     mv 4-projects/business_unit_1/shared/shared.auto.tfvars.disabled 4-projects/business_unit_1/shared/shared.auto.tfvars
 
     # restore common.auto.tfvars in main module
-    mv 4-projects/business_unit_1/development/common.auto.tfvars.disabled 4-projects/business_unit_1/development/common.auto.tfvars
+    mv 4-projects/business_unit_1/sandbox/common.auto.tfvars.disabled 4-projects/business_unit_1/sandbox/common.auto.tfvars
     mv 4-projects/business_unit_1/nonproduction/common.auto.tfvars.disabled 4-projects/business_unit_1/nonproduction/common.auto.tfvars
     mv 4-projects/business_unit_1/production/common.auto.tfvars.disabled 4-projects/business_unit_1/production/common.auto.tfvars
     mv 4-projects/business_unit_1/shared/common.auto.tfvars.disabled 4-projects/business_unit_1/shared/common.auto.tfvars
@@ -110,17 +110,17 @@ function projects(){
 
 function appinfra(){
     # restore backend configs in main module
-    mv 5-app-infra/business_unit_1/development/backend.tf.disabled 5-app-infra/business_unit_1/development/backend.tf
+    mv 5-app-infra/business_unit_1/sandbox/backend.tf.disabled 5-app-infra/business_unit_1/sandbox/backend.tf
     mv 5-app-infra/business_unit_1/nonproduction/backend.tf.disabled 5-app-infra/business_unit_1/nonproduction/backend.tf
     mv 5-app-infra/business_unit_1/production/backend.tf.disabled 5-app-infra/business_unit_1/production/backend.tf
 
     # restore ENVS.auto.tfvars in main module
-    mv 5-app-infra/business_unit_1/development/bu1-development.auto.tfvars.disabled 5-app-infra/business_unit_1/development/bu1-development.auto.tfvars
+    mv 5-app-infra/business_unit_1/sandbox/bu1-sandbox.auto.tfvars.disabled 5-app-infra/business_unit_1/sandbox/bu1-sandbox.auto.tfvars
     mv 5-app-infra/business_unit_1/nonproduction/bu1-nonproduction.auto.tfvars.disabled 5-app-infra/business_unit_1/nonproduction/bu1-nonproduction.auto.tfvars
     mv 5-app-infra/business_unit_1/production/bu1-production.auto.tfvars.disabled 5-app-infra/business_unit_1/production/bu1-production.auto.tfvars
 
     # restore common.auto.tfvars in main module
-    mv 5-app-infra/business_unit_1/development/common.auto.tfvars.disabled 5-app-infra/business_unit_1/development/common.auto.tfvars
+    mv 5-app-infra/business_unit_1/sandbox/common.auto.tfvars.disabled 5-app-infra/business_unit_1/sandbox/common.auto.tfvars
     mv 5-app-infra/business_unit_1/nonproduction/common.auto.tfvars.disabled 5-app-infra/business_unit_1/nonproduction/common.auto.tfvars
     mv 5-app-infra/business_unit_1/production/common.auto.tfvars.disabled 5-app-infra/business_unit_1/production/common.auto.tfvars
 }

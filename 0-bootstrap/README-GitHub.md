@@ -432,8 +432,8 @@ See the shared folder [README.md](../1-org/envs/shared/README.md#inputs) for add
    git checkout -b nonproduction
    git push --set-upstream origin nonproduction
 
-   git checkout -b development
-   git push --set-upstream origin development
+   git checkout -b sandbox
+   git push --set-upstream origin sandbox
    ```
 
 1. change to a nonproduction branch.

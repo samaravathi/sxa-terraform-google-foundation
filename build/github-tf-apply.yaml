@@ -16,7 +16,7 @@ name: 'tf-apply'
 on:
   push:
     branches:
-      - 'development'
+      - 'sandbox'
       - 'production'
       - 'nonproduction'
 

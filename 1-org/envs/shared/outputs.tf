@@ -126,7 +126,7 @@ output "tags" {
 
 output "shared_vpc_projects" {
   value       = { for k, v in module.environment_network : k => v }
-  description = "Shared VPC Projects info grouped by environment (development, nonproduction, production)."
+  description = "Shared VPC Projects info grouped by environment (sandbox, nonproduction, production)."
 }
 
 output "cai_monitoring_artifact_registry" {

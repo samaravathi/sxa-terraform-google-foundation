@@ -36,7 +36,7 @@ variable "folder_id" {
 }
 
 variable "env" {
-  description = "The environment to prepare (ex. development)."
+  description = "The environment to prepare (ex. sandbox)."
   type        = string
 }
 

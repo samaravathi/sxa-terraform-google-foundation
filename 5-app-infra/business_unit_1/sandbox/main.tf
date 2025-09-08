@@ -16,7 +16,7 @@
 
 locals {
   business_unit = "business_unit_1"
-  environment   = "development"
+  environment   = "sandbox"
 }
 
 module "gce_instance" {

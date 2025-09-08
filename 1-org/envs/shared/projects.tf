@@ -22,7 +22,7 @@ locals {
     "roles/iam.serviceAccountUser",
   ]
   environments = {
-    "development" : "d",
+    "sandbox" : "s",
     "nonproduction" : "n",
     "production" : "p"
   }

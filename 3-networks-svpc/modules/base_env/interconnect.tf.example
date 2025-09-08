@@ -17,7 +17,7 @@
 locals {
   interconnect_project_id = data.terraform_remote_state.org.outputs.interconnect_project_id
   base_config = {
-    "development" = {
+    "sandbox" = {
       region1_interconnect1_candidate_subnets = ["169.254.0.192/29"]
       region1_interconnect1_vlan_tag8021q     = "3905"
       region1_interconnect2_candidate_subnets = ["169.254.0.200/29"]
@@ -50,7 +50,7 @@ locals {
   }
 
   restricted_config = {
-    "development" = {
+    "sandbox" = {
       region1_interconnect1_candidate_subnets = ["169.254.0.160/29"]
       region1_interconnect1_vlan_tag8021q     = "3901"
       region1_interconnect2_candidate_subnets = ["169.254.0.168/29"]

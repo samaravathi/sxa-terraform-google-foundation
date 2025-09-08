@@ -14,14 +14,9 @@
  * limitations under the License.
  */
 
-module "env" {
-  source = "../../modules/env_baseline"
-
-  env                 = "development"
-  environment_code    = "d"
-  remote_state_bucket = var.remote_state_bucket
-  tfc_org_name        = var.tfc_org_name
-
-  project_deletion_policy    = var.project_deletion_policy
-  folder_deletion_protection = var.folder_deletion_protection
+terraform {
+  backend "gcs" {
+    bucket = "UPDATE_PROJECTS_BACKEND"
+    prefix = "terraform/projects/business_unit_1/sandbox"
+  }
 }

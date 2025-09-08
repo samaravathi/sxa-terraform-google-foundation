@@ -16,7 +16,7 @@ name: "tf-pull-request"
 on:
   pull_request:
     branches:
-      - "development"
+      - "sandbox"
       - "production"
       - "nonproduction"
 

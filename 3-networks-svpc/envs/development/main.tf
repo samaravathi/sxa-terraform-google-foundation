@@ -15,7 +15,7 @@
  */
 
 locals {
-  env              = "development"
+  env              = "sandbox"
   environment_code = substr(local.env, 0, 1)
   /*
    * Network ranges
