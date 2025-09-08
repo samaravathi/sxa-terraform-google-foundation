@@ -83,7 +83,7 @@ func TestBootstrap(t *testing.T) {
 		"gcp-projects",
 	}
 
-	branchesRegex := `^(development|nonproduction|production)$`
+	branchesRegex := `^(sandbox|nonproduction|production)$`
 
 	activateApis := []string{
 		"serviceusage.googleapis.com",

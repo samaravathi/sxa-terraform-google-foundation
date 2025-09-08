@@ -452,7 +452,7 @@ func TestOrg(t *testing.T) {
 			}
 			// shared vpc projects
 			for _, envName := range []string{
-				"development",
+				"sandbox",
 				"nonproduction",
 				"production",
 			} {

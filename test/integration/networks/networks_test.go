@@ -216,13 +216,13 @@ func TestNetworks(t *testing.T) {
 	}
 
 	cidrRanges := map[string][]string{
-		"development":   []string{"10.8.64.0/18", "10.9.64.0/18"},
+		"sandbox":   []string{"10.8.64.0/18", "10.9.64.0/18"},
 		"nonproduction": []string{"10.8.128.0/18", "10.9.128.0/18"},
 		"production":    []string{"10.8.192.0/18", "10.9.192.0/18"},
 	}
 
 	googleapisCIDR := map[string]string{
-		"development":   "10.17.0.6",
+		"sandbox":   "10.17.0.6",
 		"nonproduction": "10.17.0.7",
 		"production":    "10.17.0.8",
 	}
@@ -277,13 +277,13 @@ func TestNetworks(t *testing.T) {
 	if strings.Contains(envStage, "teardown") {
 		envNames = []string{
 			"nonproduction",
-			"development",
+			"sandbox",
 			"production",
 		}
 	} else {
 		envNames = []string{
 			"production",
-			"development",
+			"sandbox",
 			"nonproduction",
 		}
 	}

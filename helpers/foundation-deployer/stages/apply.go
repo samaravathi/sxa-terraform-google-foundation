@@ -269,7 +269,7 @@ func DeployEnvStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, outputs Bo
 		Step:          EnvironmentsStep,
 		Repo:          EnvironmentsRepo,
 		GitConf:       conf,
-		Envs:          []string{"production", "nonproduction", "development"},
+		Envs:          []string{"production", "nonproduction", "sandbox"},
 	}
 
 	return deployStage(t, stageConf, s, c)
@@ -337,7 +337,7 @@ func DeployNetworksStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, outpu
 		HasLocalStep:  true,
 		LocalSteps:    localStep,
 		GroupingUnits: []string{"envs"},
-		Envs:          []string{"production", "nonproduction", "development"},
+		Envs:          []string{"production", "nonproduction", "sandbox"},
 	}
 	return deployStage(t, stageConf, s, c)
 }
@@ -368,7 +368,7 @@ func DeployProjectsStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, outpu
 		ProjectDeletionPolicy:    tfvars.ProjectDeletionPolicy,
 	}
 	for _, envfile := range []string{
-		"development.auto.tfvars",
+		"sandbox.auto.tfvars",
 		"nonproduction.auto.tfvars",
 		"production.auto.tfvars"} {
 		err = utils.WriteTfvars(filepath.Join(c.FoundationPath, ProjectsStep, envfile), envTfvars)
@@ -389,7 +389,7 @@ func DeployProjectsStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, outpu
 		HasLocalStep:  true,
 		LocalSteps:    []string{"shared"},
 		GroupingUnits: []string{"business_unit_1"},
-		Envs:          []string{"production", "nonproduction", "development"},
+		Envs:          []string{"production", "nonproduction", "sandbox"},
 	}
 
 	return deployStage(t, stageConf, s, c)
@@ -407,7 +407,7 @@ func DeployExampleAppStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, out
 		return err
 	}
 	// update backend bucket
-	for _, e := range []string{"production", "nonproduction", "development"} {
+	for _, e := range []string{"production", "nonproduction", "sandbox"} {
 		err = utils.ReplaceStringInFile(filepath.Join(c.FoundationPath, AppInfraStep, "business_unit_1", e, "backend.tf"), "UPDATE_APP_INFRA_BUCKET", outputs.StateBucket)
 		if err != nil {
 			return err
@@ -432,7 +432,7 @@ func DeployExampleAppStage(t testing.TB, s steps.Steps, tfvars GlobalTFVars, out
 		Step:          AppInfraStep,
 		Repo:          AppInfraRepo,
 		GitConf:       conf,
-		Envs:          []string{"production", "nonproduction", "development"},
+		Envs:          []string{"production", "nonproduction", "sandbox"},
 	}
 
 	return deployStage(t, stageConf, s, c)

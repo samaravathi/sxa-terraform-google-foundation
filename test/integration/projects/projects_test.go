@@ -77,7 +77,7 @@ func TestProjects(t *testing.T) {
 		sharedNetwork string
 	}{
 		{
-			name:              "bu1_development",
+			name:              "bu1_sandbox",
 			repo:              "bu1-example-app",
 			baseDir:           "../../../4-projects/business_unit_1/%s",
 			sharedNetwork: fmt.Sprintf("vpc-d-svpc%s", networkMode),

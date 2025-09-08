@@ -50,7 +50,7 @@ func TestEnvs(t *testing.T) {
 	}
 
 	for _, envName := range []string{
-		"development",
+		"sandbox",
 		"nonproduction",
 		"production",
 	} {
